@@ -1,0 +1,328 @@
+body {
+	background-image: url(../img/background.png);
+	font-family: 'Montserrat', sans-serif;
+	color: white; 
+ 	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	background-position: center;
+  	background-attachment: fixed;
+  	background-repeat: no-repeat;
+}
+
+a:link,a:visited, a:active{
+	color: inherit;
+}
+
+.carta {
+	perspective: 1000px;
+	float: left;
+	margin: 1%;
+}
+
+.cartaGirada .flipper, .carta.hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.carta, .cara, .dorso {
+	width: 6em;
+	padding-bottom: 100%;
+}
+
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.cara, .dorso {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 4em;
+}
+
+.cara {
+	z-index: 2;
+	transform: rotateY(0deg);
+	background-color: white;
+	box-shadow: 0 0 1em 0 black;
+	cursor: pointer;
+}
+
+.opacity {
+	opacity: 0.5;
+}
+
+.dorso {
+	transform: rotateY(180deg);
+	background-color: white;
+	box-shadow: 0 0 1em 0 #606;
+  	background-position: center;
+}
+
+.cara:hover {
+  animation: shake 0.5s cubic-bezier(.20,.07,.19,.20) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+section {
+	width: 70%;
+	margin: 0 auto;
+}
+
+table {
+	margin: 0 auto;
+	margin-top: 1.5em;
+	margin-bottom: 2em;
+}
+
+td {
+	padding: 0.5em;
+}
+
+header {
+	padding: 1em;
+	background-color: #606;
+	margin: 0 auto 0 auto;
+	text-align: center;
+}
+
+header h1 {
+	font-size: 2.5em;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 0.3em;
+}
+
+header p {
+	display: inline-block;
+	text-align: right;
+	margin: 0 0.5em 0 0.5em;
+}
+
+form {
+	width: 35em;
+	position: absolute;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+	box-shadow: 0 0 2em 0 black;
+	text-align: center;
+	border-bottom-right-radius: 2em;
+	border-top-left-radius: 2em;
+}
+
+#inputs {
+	background-color: white;
+	border-top-left-radius: 2em;
+	padding: 3em;
+}
+
+#botonAceptar {
+	width: 100%;
+	margin-top: 0;
+	padding: 1em 0 1em 0;
+	letter-spacing: 0.2em;
+	font-weight: 800;
+	background-color: white;
+	border: none;
+	color: #606;
+	border-top: solid 0.3em #606;
+	border-bottom-right-radius: 2em;
+	cursor: pointer;
+}
+
+#botonAceptar:hover {
+	background-color: #606;
+	color: white;
+	transition: 0.5s;
+}
+
+#tituloPortada {
+	font-size: 4em;
+	text-align: center;
+	margin-top: 0.5em;
+	letter-spacing: 0.2em;
+	color: #606;
+	opacity: 0.2;
+	font-weight: 800;
+	text-shadow: 0 0 0.6em white;
+}
+
+form output, form input, form select {
+	display: block;
+	margin: 0 auto;
+	color: #525354;
+	margin-top: 2em;
+	width: 25em;
+ 	text-align: center;
+ 	font-size: 1em;
+}
+
+#outputNombre {
+	margin-top: 0;
+}
+
+#inputNombre {
+	background-color: white;
+	border:none;
+	background: transparent;
+	border: 1px solid #ccc;
+	height: 2em;
+	-moz-appearance: none;
+ 	-webkit-appearance: none;
+ 	appearance: none;
+ 	letter-spacing: 0.3em;
+}
+
+form select {
+	background-color: white;
+	border:none;
+	background: transparent;
+	border: 1px solid #ccc;
+	height: 2em;
+	background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+	-moz-appearance: none;
+ 	-webkit-appearance: none;
+ 	appearance: none;
+ 	letter-spacing: 1em;
+}
+
+form output {
+	letter-spacing: 0.2em;
+}
+
+#dialogoverlay { 
+ 	opacity: .5; 
+ 	position: fixed; 
+ 	top: 0px; 
+ 	left: 0px; 
+ 	background: #FFF;
+ 	width: 0; 
+ 	z-index: 10;
+} 
+
+#dialogbox, #dialogbox2 {
+	background: #fff;
+ 	z-index: 10;
+ 	width: 0;
+	position: absolute;
+	box-shadow: 0 0 2em 0 black;
+	border-bottom-right-radius: 2em;
+	border-top-left-radius: 2em;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    text-align: center;
+    color: #525354;
+    overflow: hidden;
+    transition: 0.2s;
+}
+ 	
+#dialogbox div #dialogboxhead {
+ 	border-top-left-radius: 2em;
+ 	padding-top: 1em;
+ 	font-size: 2em;
+ 	color: #606;
+} 
+
+#dialogbox div #dialogboxbody {
+	padding-top: 2em;
+	padding-bottom: 2em;
+} 
+
+#dialogbox div #dialogboxfoot {
+	margin-top: 0;
+	padding: 1em;
+	letter-spacing: 0.2em;
+	font-weight: 800;
+	background-color: white;
+	border: none;
+	color: #606;
+	border-top: solid 0.3em #606;
+	border-bottom-right-radius: 2em;
+	cursor: pointer;
+}
+
+#dialogbox div #dialogboxfoot:hover {
+	background-color: #606;
+	color: white;
+	transition: 0.5s;
+}
+
+#opciones {
+	color: #606;
+	background-color: white;
+	text-align: center;
+
+}
+
+#opciones ul li {
+	display: inline-block;
+	padding: 0.5em 2em 0.5em 2em;
+	cursor: pointer;
+	width: 8em;
+	margin: 0;
+}
+
+.actual {
+	background-color: #606;
+	color: white;
+}
+
+#opciones ul li:hover {
+	background-color: #606;
+	color: white;
+	transition: 0.5s;
+}
+
+#puntuaciones {
+	box-shadow: 0 0 1em 0 black;
+	border-bottom-right-radius: 2em;
+	border-top-left-radius: 2em;
+	overflow: hidden;
+}
+
+#puntuaciones tr td {
+	width: 8em;
+	text-align: center;
+	background-color: white;
+	color: #606;
+	padding: 1em;
+}
+
+#puntuaciones th {
+	font-weight: 800;
+	background-color: #606;
+	color: white;
+	padding: 1em;
+}
+
+#puntuaciones .seleccionable:hover {
+	opacity: 0.7;
+}

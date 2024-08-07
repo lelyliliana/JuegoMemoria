@@ -1,0 +1,10 @@
+Leli | 28 | 4
+Juan | 2 | 2
+Marina | 4 | 2
+Álvaro | 2 | 2
+Pedro | 2 | 2
+Lucía | 17 | 2
+Dolores | 2 | 2
+Sergi | 7 | 2
+InformáticaIndustrial | 105 | 8
+Informática | 100 | 8
